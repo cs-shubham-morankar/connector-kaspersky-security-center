@@ -1,436 +1,342 @@
 {
-    "name": "KasperskySecurityCenter",
-    "version": "1.0.1",
-    "label": "Kaspersky Security Center 13",
-    "description": "Manages endpoints and groups through the Kaspersky Security Center 13",
-    "publisher": "Community",
-    "icon_small_name": "logo.png",
-    "icon_large_name": "logo.png",
-    "category": "Antivirus",
-    "configuration": {
-        "fields": [
-            {
-                "title": "Server URL",
-                "type": "text",
-                "name": "server_url",
-                "required": true,
-                "visible": true,
-                "editable": true
-            },
-            {
-                "title": "Protcol",
-                "type": "text",
-                "name": "protcol",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "value": "13299"
-            },
-            {
-                "title": "User Name",
-                "type": "text",
-                "name": "user",
-                "required": true,
-                "visible": true,
-                "editable": true
-            },
-            {
-                "title": "Password",
-                "type": "password",
-                "name": "pass",
-                "required": true,
-                "visible": true,
-                "editable": true
-            },
-            {
-                "title": "Verify SSL",
-                "type": "checkbox",
-                "name": "verify_ssl",
-                "required": false,
-                "visible": true,
-                "editable": true,
-                "value": false
-            }
-        ]
+  "name": "kaspersky-security-center",
+  "version": "1.0.0",
+  "label": "Kaspersky Security Center",
+  "description": "Manages endpoints and groups through the Kaspersky Security Center.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": "Endpoint Security",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "URL of the Kaspersky Security Center server to which you will connect and perform automated operations.",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "placeholder": "https://kaspersky.domain.com:13299"
+      },
+      {
+        "title": "Username",
+        "description": "Username to access the Kaspersky Security Center server to which you will connect and perform automated operations.",
+        "type": "text",
+        "name": "username",
+        "required": true,
+        "visible": true,
+        "editable": true
+      },
+      {
+        "title": "Password",
+        "description": "Password to access the Kaspersky Security Center server to which you will connect and perform automated operations.",
+        "type": "password",
+        "name": "password",
+        "required": true,
+        "visible": true,
+        "editable": true
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "required": false,
+        "visible": true,
+        "editable": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_hosts_group_static_info",
+      "title": "Get Host Group Static Info",
+      "description": "Retrieves a host group static Info from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_hosts_group_static_info",
+      "parameters": [],
+      "enabled": true,
+      "output_schema": {}
     },
-    "operations": [
+    {
+      "operation": "get_groups",
+      "title": "Get All Groups Details",
+      "description": "Retrieves a list of all groups from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_groups",
+      "output_schema": {},
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "operation": "get_host_details",
+      "title": "Get Host Details",
+      "description": "Retrieves a host details from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_host_details",
+      "output_schema": {},
+      "parameters": [
         {
-            "operation": "get_hosts_group_static_info",
-            "title": "Get Host Group Static Info ",
-            "description": " ",
-            "category": "investigation",
-            "annotation": "get_hosts_group_static_info",
-            "output_schema": {
-                "PxgRetVal": {
-                    "KLADMSRV_B2B_CLOUD_MODE": "",
-                    "KLADMSRV_EV_EV_SIZE": {
-                        "type": "",
-                        "value": ""
-                    },
-                    "KLADMSRV_FORCE_SYNC_SUPPORTED": "",
-                    "KLADMSRV_GRP_ROOT": "",
-                    "KLADMSRV_GRP_SUPER": "",
-                    "KLADMSRV_GRP_UNASSIGNED": "",
-                    "KLADMSRV_HOSTED_TYPE": "",
-                    "KLADMSRV_IS_VIRTUAL": "",
-                    "KLADMSRV_KSC_MODE": "",
-                    "KLADMSRV_LINUX_EDITION": "",
-                    "KLADMSRV_MAINTENANCE_SUPPORTED": "",
-                    "KLADMSRV_NAGENT_RUNNING": "",
-                    "KLADMSRV_NEED_UNC_PATH": "",
-                    "KLADMSRV_PCLOUD_MODE": "",
-                    "KLADMSRV_PRODUCT_FULL_VERSION": "",
-                    "KLADMSRV_PRODUCT_NAME": "",
-                    "KLADMSRV_PRODUCT_VERSION": "",
-                    "KLADMSRV_SERVER_HOSTNAME": "",
-                    "KLADMSRV_SERVER_VERSION_ID": "",
-                    "KLADMSRV_SPL_PPC_ENABLED": "",
-                    "KLADMSRV_VSID": "",
-                    "KLADMSRV_VSUID": "",
-                    "KLSRV_NETSIZE": ""
-                }
-            },
-            "parameters": [],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12137"
-        },
-        {
-            "operation": "get_groups",
-            "title": "Get All Groups Details ",
-            "description": "Returns a list of groups.",
-            "category": "investigation",
-            "annotation": "get_groups",
-            "output_schema": {
-                "value": {
-                    "id": "",
-                    "name": ""
-                }
-            },
-            "parameters": [],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12138"
-        },
-        {
-            "operation": "get_host_details",
-            "title": "Get Host Details ",
-            "description": "Get Host Details",
-            "category": "investigation",
-            "annotation": "get_host_details",
-            "output_schema": {
-                "KLHST_WKS_DN": "",
-                "KLHST_WKS_DNSDOMAIN": "",
-                "KLHST_WKS_HOSTNAME": "",
-                "KLHST_WKS_LAST_FULLSCAN": {
-                    "type": "",
-                    "value": ""
-                },
-                "KLHST_WKS_OS_NAME": "",
-                "KLHST_WKS_VIRUS_COUNT": {
-                    "type": "",
-                    "value": ""
-                }
-            },
-            "parameters": [
-                {
-                    "title": "Host ID",
-                    "type": "text",
-                    "name": "host_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12139"
-        },
-        {
-            "operation": "get_listhost_group",
-            "title": "Get Host Lists",
-            "description": "Returns a list of hosts located  in specific group",
-            "category": "investigation",
-            "annotation": "get_listhost_group",
-            "output_schema": {
-                "type": "params",
-                "value": {
-                    "KLHST_WKS_DN": "",
-                    "KLHST_WKS_FQDN": "",
-                    "KLHST_WKS_HOSTNAME": "",
-                    "KLHST_WKS_OS_NAME": ""
-                }
-            },
-            "parameters": [
-                {
-                    "title": "Group ID",
-                    "type": "text",
-                    "name": "group_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12140"
-        },
-        {
-            "operation": "get_product_installed",
-            "title": "Get Products Installed ",
-            "description": "Get Kaspersky product details installed at specific host",
-            "category": "investigation",
-            "annotation": "get_product_installed",
-            "output_schema": {
-                "DisplayName": {
-                    "version": "",
-                    "last_update": ""
-                },
-                "KLHST_WKS_OS_NAME": "",
-                "KLHST_WKS_VIRUS_COUNT": {
-                    "type": "",
-                    "value": ""
-                }
-            },
-            "parameters": [
-                {
-                    "title": "Host ID",
-                    "type": "text",
-                    "name": "host_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12141"
-        },
-        {
-            "operation": "delete_group",
-            "title": "Delete Specific Group ",
-            "description": "Deletes an administrative group ",
-            "category": "investigation",
-            "annotation": "delete_group",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "Group ID",
-                    "type": "text",
-                    "name": "group_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "Value",
-                    "type": "text",
-                    "name": "flag",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": "1",
-                    "tooltip": "1 = Delete group only if it is empty, 2 = delete group with subgroups, policies and tasks 3 = delete group with subgroups, hosts, policies and tasks."
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12142"
-        },
-        {
-            "operation": "add_group",
-            "title": "Add Group ",
-            "description": "Create new administration group",
-            "category": "investigation",
-            "annotation": "add_group",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "Group Parent ID",
-                    "type": "text",
-                    "name": "parent_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "Group Name",
-                    "type": "text",
-                    "name": "name",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12143"
-        },
-        {
-            "operation": "get_software_installed",
-            "title": "Get software Installed on specefic host ",
-            "description": "Get all product details installed ",
-            "category": "investigation",
-            "annotation": "get_software_installed",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "Host ID",
-                    "type": "text",
-                    "name": "host_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12144"
-        },
-        {
-            "operation": "list_policies_request",
-            "title": "list of policies on specific Group ",
-            "description": "Returns policies located in specified group",
-            "category": "investigation",
-            "annotation": "list_policies_request",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "Group ID",
-                    "type": "text",
-                    "name": "group_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12145"
-        },
-        {
-            "operation": "get_policy_request",
-            "title": "Get Specific policy ",
-            "description": "Get Specific policy ",
-            "category": "investigation",
-            "annotation": "get_policy_request",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "Policy ID",
-                    "type": "text",
-                    "name": "policy_id",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12146"
-        },
-        {
-            "operation": "add_policy_request",
-            "title": "Add Policy",
-            "description": "Create New Policy and assigned to specific Group ",
-            "category": "investigation",
-            "annotation": "add_policy_request",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "KLPOL DN",
-                    "type": "text",
-                    "name": "KLPOL_DN",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "Group Id",
-                    "type": "text",
-                    "name": "nGroupId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "KLPOL PRODUCT",
-                    "type": "text",
-                    "name": "KLPOL_PRODUCT",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "KLPOL VERSION",
-                    "type": "text",
-                    "name": "KLPOL_VERSION",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "KLPOL GROUP ID",
-                    "type": "text",
-                    "name": "KLPOL_GROUP_ID",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12147"
-        },
-        {
-            "operation": "move_hosts",
-            "title": "Move host to specific Group",
-            "description": "Move Host from group to other group",
-            "category": "investigation",
-            "annotation": "move_hosts",
-            "output_schema": {},
-            "parameters": [
-                {
-                    "title": "New Group ID",
-                    "type": "text",
-                    "name": "newgroup",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "Host Name",
-                    "type": "text",
-                    "name": "pHostNames",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "enabled": true,
-            "open": false,
-            "$$hashKey": "object:12148"
+          "title": "Host ID",
+          "description": "Specify the ID of the host based on which you want to retrieve host details from Kaspersky Security Center.",
+          "type": "text",
+          "name": "host_id",
+          "required": true,
+          "visible": true,
+          "editable": true
         }
-    ],
-    "forked_from": "kaspersky_edr_1_0_0",
-    "cs_approved": true,
-    "cs_compatible": true,
-    "help_online": "",
-    "icon_medium_name": "logo.png"
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_listhost_group",
+      "title": "Get Host List",
+      "description": "Retrives a list of all hosts located in specific group from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_listhost_group",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Group ID",
+          "description": "Specify the ID of the group based on which you want to retrieve a list of all host details from Kaspersky Security Center.",
+          "type": "text",
+          "name": "group_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_product_installed",
+      "title": "Get Products Installed",
+      "description": "Retrives a kaspersky product details installed at specific host from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_product_installed",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Host ID",
+          "description": "Specify the ID of the host based on which you want to retrieve product details from Kaspersky Security Center.",
+          "type": "text",
+          "name": "host_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "delete_group",
+      "title": "Delete Specific Group",
+      "description": "Deletes an specific administrative group in the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "delete_group",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Group ID",
+          "description": "Specify the ID of the group based on which you want to delete a specific group in Kaspersky Security Center.",
+          "type": "text",
+          "name": "group_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Value",
+          "description": "Specify the value  based on which you want to delete a specific group in Kaspersky Security Center.",
+          "type": "integer",
+          "name": "flag",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": 1,
+          "tooltip": "1 = Delete group only if it is empty, 2 = delete group with subgroups, policies and tasks 3 = delete group with subgroups, hosts, policies and tasks."
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_group",
+      "title": "Add Group",
+      "description": "Create a new administration group in Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "add_group",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Group Parent ID",
+          "description": "Specify the ID of the parent group based on which you want to create a new group in Kaspersky Security Center.",
+          "type": "text",
+          "name": "parent_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Group Name",
+          "description": "Specify the name of the group based on which you want to create a new group in Kaspersky Security Center.",
+          "type": "text",
+          "name": "name",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_software_installed",
+      "title": "Get Software Installed on Specefic Host",
+      "description": "Retrives a list of all product details installed from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_software_installed",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Host ID",
+          "description": "Specify the ID of the host based on which you want to retrieves a product details from the Kaspersky Security Center.",
+          "type": "text",
+          "name": "host_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "list_policies_request",
+      "title": "Get All Policies on Specific Group",
+      "description": "Retrives a policies located in specified group from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "list_policies_request",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Group ID",
+          "description": "Specify the ID of the group based on which you want to retrieves list of all policies from Kaspersky Security Center.",
+          "type": "text",
+          "name": "group_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_policy_request",
+      "title": "Get Specific Policy",
+      "description": "Retrive a specific policy from the Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "get_policy_request",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Policy ID",
+          "description": "Specify the ID of the policy based on which you want to retrieve a specific policy from Kaspersky Security Center.",
+          "type": "text",
+          "name": "policy_id",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_policy_request",
+      "title": "Add Policy",
+      "description": "Create New Policy and assigned to specific Group in Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "add_policy_request",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Group Id",
+          "description": "Specify the ID of the group based on which you want to create a new policy in Kaspersky Security Center.",
+          "type": "text",
+          "name": "nGroupId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Policy Display Name",
+          "description": "Specify the display name of the policy based on which you want to create a new policy in Kaspersky Security Center.",
+          "type": "text",
+          "name": "KLPOL_DN",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Policy Product Name",
+          "description": "Specify the product name of the policy based on which you want to create a new policy in Kaspersky Security Center.",
+          "type": "text",
+          "name": "KLPOL_PRODUCT",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Policy Product Version",
+          "description": "Specify the product version of the policy based on which you want to create a new policy in Kaspersky Security Center.",
+          "type": "text",
+          "name": "KLPOL_VERSION",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Policy GROUP ID",
+          "description": "Specify the group ID of the policy based on which you want to create a new policy in Kaspersky Security Center.",
+          "type": "integer",
+          "name": "KLPOL_GROUP_ID",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "move_hosts",
+      "title": "Move Host to Specific Group",
+      "description": "Move Host from group to other group in Kaspersky Security Center.",
+      "category": "investigation",
+      "annotation": "move_hosts",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "New Group ID",
+          "description": "Specify the group ID based on which you want to move host to specific group in Kaspersky Security Center.",
+          "type": "text",
+          "name": "newgroup",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Host Name",
+          "description": "Specify the name of the host based on which you want to move host to specific group in Kaspersky Security Center.",
+          "type": "text",
+          "name": "pHostNames",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "enabled": true
+    }
+  ]
 }
