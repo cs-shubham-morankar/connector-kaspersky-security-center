@@ -1,0 +1,118 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Kaspersky Security Center - 1.0.0",
+      "description": null,
+      "visible": true,
+      "image": null,
+      "uuid": "0f8e0403-91ca-4505-bbf3-a8daa3f75f94",
+      "id": 16,
+      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "createDate": 1643701185,
+      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "modifyDate": 1643701185,
+      "recordTags": [
+        "Kaspersky Security Center"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Group List",
+          "aliasName": null,
+          "tag": null,
+          "description": null,
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1643701275,
+          "collection": "/api/3/workflow_collections/0f8e0403-91ca-4505-bbf3-a8daa3f75f94",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d48bc891-8c2f-43b2-beef-8b9cb7e69372",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "4c1c8cc8-c805-4a5e-9d28-ded9605fc037",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "40",
+              "left": "40",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "d48bc891-8c2f-43b2-beef-8b9cb7e69372",
+              "id": 256
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Group Details",
+              "description": null,
+              "arguments": {
+                "name": "Kaspersky Security Center",
+                "config": "1368835e-8c1b-4793-85fb-300f92f7bf55",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "kaspersky-security-center",
+                "operation": "get_groups",
+                "operationTitle": "Get All Groups Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "183",
+              "left": "165",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "c5211cce-497a-4f6d-9433-0409d83f5f88",
+              "id": 257
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Group Details",
+              "targetStep": "/api/3/workflow_steps/c5211cce-497a-4f6d-9433-0409d83f5f88",
+              "sourceStep": "/api/3/workflow_steps/d48bc891-8c2f-43b2-beef-8b9cb7e69372",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "477dcf5f-d7f2-4afb-b112-de9d800ed226"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "ebe315a4-99e9-43f3-a2e5-9feb8e30689a",
+          "recordTags": [
+            "Kaspersky Security Center"
+          ],
+          "id": 67,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1643701230,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1643701275,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Kaspersky Security Center"
+  ]
+}
