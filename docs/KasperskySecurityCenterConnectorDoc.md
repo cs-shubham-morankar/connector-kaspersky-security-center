@@ -1,5 +1,5 @@
 ## About the connector
-Manages endpoints and groups through the Kaspersky Security Center.
+Kaspersky Security Center makes it easy to manage and secure both physical and virtual endpoints from a single, unified management console.
 <p>This document provides information about the Kaspersky Security Center Connector, which facilitates automated interactions, with a Kaspersky Security Center server using FortiSOAR&trade; playbooks. Add the Kaspersky Security Center Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Kaspersky Security Center.</p>
 
 ### Version information
