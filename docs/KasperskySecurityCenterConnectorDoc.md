@@ -1,6 +1,7 @@
 ## About the connector
 Manages endpoints and groups through the Kaspersky Security Center.
 <p>This document provides information about the Kaspersky Security Center Connector, which facilitates automated interactions, with a Kaspersky Security Center server using FortiSOAR&trade; playbooks. Add the Kaspersky Security Center Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Kaspersky Security Center.</p>
+
 ### Version information
 
 Connector Version: 1.0.0
@@ -17,7 +18,7 @@ Certified: No
 - You must have the URL of Kaspersky Security Center server to which you will connect and perform automated operations and credentials to access that server.
 - The FortiSOAR&trade; server should have outbound connectivity to port 443 on the Kaspersky Security Center server.
 
-## Minimum Permissions Required
+### Minimum Permissions Required
 - N/A
 
 ## Configuring the connector
@@ -29,6 +30,7 @@ For the procedure to configure a connector, click [here](https://docs.fortinet.c
 <tr><td>Password<br></td><td>Password to access the Kaspersky Security Center server to which you will connect and perform automated operations.<br>
 <tr><td>Verify SSL<br></td><td>Specifies whether the SSL certificate for the server is to be verified or not. <br/>By default, this option is set as True.<br></td></tr>
 </tbody></table>
+
 ## Actions supported by the connector
 The following automated operations can be included in playbooks and you can also use the annotations to access operations from FortiSOAR&trade; release 4.10.0 and onwards:
 <table border=1><thead><tr><th>Function<br></th><th>Description<br></th><th>Annotation and Category<br></th></tr></thead><tbody><tr><td>Get Host Group Static Info<br></td><td>Retrieves a host group static Info from the Kaspersky Security Center.<br></td><td>get_hosts_group_static_info <br/>Investigation<br></td></tr>
@@ -44,6 +46,7 @@ The following automated operations can be included in playbooks and you can also
 <tr><td>Add Policy<br></td><td>Create New Policy and assigned to specific Group in Kaspersky Security Center.<br></td><td>add_policy_request <br/>Investigation<br></td></tr>
 <tr><td>Move Host to Specific Group<br></td><td>Move Host from group to other group in Kaspersky Security Center.<br></td><td>move_hosts <br/>Investigation<br></td></tr>
 </tbody></table>
+
 ### operation: Get Host Group Static Info
 #### Input parameters
 None.
@@ -53,67 +56,85 @@ None.
 ### operation: Get All Groups Details
 #### Input parameters
 None.
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Get Host Details
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Host ID<br></td><td>Specify the ID of the host based on which you want to retrieve host details from Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Get Host List
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Group ID<br></td><td>Specify the ID of the group based on which you want to retrieve a list of all host details from Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Get Products Installed
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Host ID<br></td><td>Specify the ID of the host based on which you want to retrieve product details from Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Delete Specific Group
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Group ID<br></td><td>Specify the ID of the group based on which you want to delete a specific group in Kaspersky Security Center.<br>
 </td></tr><tr><td>Value<br></td><td>Specify the value  based on which you want to delete a specific group in Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Add Group
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Group Parent ID<br></td><td>Specify the ID of the parent group based on which you want to create a new group in Kaspersky Security Center.<br>
 </td></tr><tr><td>Group Name<br></td><td>Specify the name of the group based on which you want to create a new group in Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Get Software Installed on Specefic Host
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Host ID<br></td><td>Specify the ID of the host based on which you want to retrieves a product details from the Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Get All Policies on Specific Group
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Group ID<br></td><td>Specify the ID of the group based on which you want to retrieves list of all policies from Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Get Specific Policy
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Policy ID<br></td><td>Specify the ID of the policy based on which you want to retrieve a specific policy from Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Add Policy
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Group Id<br></td><td>Specify the ID of the group based on which you want to create a new policy in Kaspersky Security Center.<br>
@@ -122,17 +143,21 @@ None.
 </td></tr><tr><td>Policy Product Version<br></td><td>Specify the product version of the policy based on which you want to create a new policy in Kaspersky Security Center.<br>
 </td></tr><tr><td>Policy GROUP ID<br></td><td>Specify the group ID of the policy based on which you want to create a new policy in Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+
 ### operation: Move Host to Specific Group
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>New Group ID<br></td><td>Specify the group ID based on which you want to move host to specific group in Kaspersky Security Center.<br>
 </td></tr><tr><td>Host Name<br></td><td>Specify the name of the host based on which you want to move host to specific group in Kaspersky Security Center.<br>
 </td></tr></tbody></table>
+
 #### Output
 
  The output contains a non-dictionary value.
+ 
 ## Included playbooks
 The `Sample - kaspersky-security-center - 1.0.0` playbook collection comes bundled with the Kaspersky Security Center connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR<sup>TM</sup> after importing the Kaspersky Security Center connector.
 
