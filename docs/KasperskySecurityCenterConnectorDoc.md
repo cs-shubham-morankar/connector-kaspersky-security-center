@@ -7,7 +7,7 @@ Kaspersky Security Center makes it easy to manage and secure both physical and v
 Connector Version: 1.0.0
 
 
-Authored By: Community
+Authored By: Islam Baker (Fortinet SE)
 
 Certified: No
 ## Installing the connector
