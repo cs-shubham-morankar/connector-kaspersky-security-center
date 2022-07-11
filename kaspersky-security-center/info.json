@@ -6,7 +6,7 @@
   "publisher": "Community",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/kapsersky-security-center/312/kapsersky-security-center-v1-0-0",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/kaspersky-security-center/312/kaspersky-security-center-v1-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Endpoint Security",
