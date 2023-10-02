@@ -78,11 +78,47 @@ def get_hosts_group_static_info(config, params):
 def get_host_details(config, params):
     kedr = KasperskyEDR(config)
     endpoint = 'HostGroup.GetHostInfo'
-    payload = {"strHostName": params.get('host_id'),
+    payload = {"strHostName": str(params.get('host_id')),
                "pFields2Return": ['KLHST_WKS_OS_NAME', 'KLHST_WKS_LAST_FULLSCAN', 'KLHST_WKS_VIRUS_COUNT',
                                   'KLHST_WKS_HOSTNAME', 'KLHST_WKS_DN', 'KLHST_WKS_DNSDOMAIN']}
     response = kedr.make_rest_call(endpoint=endpoint, method='POST', data=json.dumps(payload))
-    return response
+    
+    # Check if the response contains strAccessorId
+    if 'strAccessor' not in response:
+        return response
+    
+    str_accessor_id = response['strAccessor']
+    # Initialize an empty list to collect chunk data
+    chunk_data = []
+    
+    # Step 2: Use strAccessorId to fetch data page by page
+    page = 1
+    items_per_page = 100  # Adjust this based on your requirements
+    
+    while True:
+        chunk_endpoint = 'ChunkAccessor.GetItemsChunk'
+        chunk_payload = {
+            "strAccessorId": str_accessor_id,
+            "lFirstItemIndex": (page - 1) * items_per_page,
+            "lItemsCount": items_per_page
+        }
+        
+        chunk_response = kedr.make_rest_call(endpoint=chunk_endpoint, method='POST', data=json.dumps(chunk_payload))
+        # Extract and append chunk data to the list
+        if 'pChunk' in chunk_response:
+            chunk_data.append(chunk_response['pChunk'])
+        
+        # Check if there are more pages to fetch
+        if 'bLastChunk' in chunk_response and not chunk_response['bLastChunk']:
+            page += 1
+        else:
+            break
+        
+
+    
+    # Return the collected chunk data as a JSON array
+    return json.dumps(chunk_data)
+
 
 
 def get_groups(config, params):
@@ -102,7 +138,42 @@ def get_listhost_group(config, params):
                                      'KLHST_WKS_HOSTNAME', 'KLHST_WKS_DN', 'KLHST_WKS_OS_NAME'],
                "lMaxLifeTime": 100}
     response = kedr.make_rest_call(endpoint=endpoint, method='POST', data=json.dumps(payload))
-    return response
+    
+    # Check if the response contains strAccessorId
+    if 'strAccessor' not in response:
+        return response
+    
+    str_accessor_id = response['strAccessor']
+    # Initialize an empty list to collect chunk data
+    chunk_data = []
+    
+    # Step 2: Use strAccessorId to fetch data page by page
+    page = 1
+    items_per_page = 100  # Adjust this based on your requirements
+    
+    while True:
+        chunk_endpoint = 'ChunkAccessor.GetItemsChunk'
+        chunk_payload = {
+            "strAccessorId": str_accessor_id,
+            "lFirstItemIndex": (page - 1) * items_per_page,
+            "lItemsCount": items_per_page
+        }
+        
+        chunk_response = kedr.make_rest_call(endpoint=chunk_endpoint, method='POST', data=json.dumps(chunk_payload))
+        # Extract and append chunk data to the list
+        if 'pChunk' in chunk_response:
+            chunk_data.append(chunk_response['pChunk'])
+        
+        # Check if there are more pages to fetch
+        if 'bLastChunk' in chunk_response and not chunk_response['bLastChunk']:
+            page += 1
+        else:
+            break
+        
+
+    
+    # Return the collected chunk data as a JSON array
+    return json.dumps(chunk_data)
 
 
 def delete_group(config, params):
@@ -124,7 +195,7 @@ def add_group(config, params):
 def get_software_installed(config, params):
     kedr = KasperskyEDR(config)
     endpoint = 'InventoryApi.GetHostInvProducts'
-    payload = {'szwHostId': params.get('host_id')}
+    payload = {'szwHostId': str(params.get('host_id'))}
     response = kedr.make_rest_call(endpoint=endpoint, method='POST', data=json.dumps(payload))
     return response
 
@@ -132,7 +203,7 @@ def get_software_installed(config, params):
 def get_product_installed(config, params):
     kedr = KasperskyEDR(config)
     endpoint = 'HostGroup.GetHostProducts'
-    payload = {"strHostName": params.get('host_id')}
+    payload = {"strHostName": str(params.get('host_id'))}
     response = kedr.make_rest_call(endpoint=endpoint, method='POST', data=json.dumps(payload))
     return response
 

@@ -4,7 +4,7 @@ Kaspersky Security Center makes it easy to manage and secure both physical and v
 
 ### Version information
 
-Connector Version: 1.0.0
+Connector Version: 1.0.1
 
 
 Authored By: Islam Baker (Fortinet SE)
