@@ -3,7 +3,7 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Kaspersky Security Center - 1.0.0",
+      "name": "Sample - Kaspersky Security Center - 1.0.1",
       "description": null,
       "visible": true,
       "image": null,
@@ -45,7 +45,7 @@
                 "params": {
                   "group_id": "1"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_listhost_group",
                 "operationTitle": "Get Host List",
@@ -141,7 +141,7 @@
                   "flag": 1,
                   "group_id": "1"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "delete_group",
                 "operationTitle": "Delete Specific Group",
@@ -261,7 +261,7 @@
                 "name": "Kaspersky Security Center",
                 "config": "",
                 "params": [],
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_groups",
                 "operationTitle": "Get All Groups Details",
@@ -330,7 +330,7 @@
                   "newgroup": "1",
                   "pHostNames": "EC2AMAZ-U66K3L"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "move_hosts",
                 "operationTitle": "Move host to specific Group",
@@ -452,7 +452,7 @@
                 "params": {
                   "group_id": "1"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "list_policies_request",
                 "operationTitle": "Get All Policies on Specific Group",
@@ -520,7 +520,7 @@
                 "params": {
                   "host_id": "5528e16f-bf83-47c3-8d0b-0fdf79f9d673"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_host_details",
                 "operationTitle": "Get Host Details",
@@ -642,7 +642,7 @@
                 "params": {
                   "host_id": "5528e16f-bf83-47c3-8d0b-0fdf79f9d673"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_software_installed",
                 "operationTitle": "Get Software Installed on Specefic Host",
@@ -735,13 +735,13 @@
                 "name": "Kaspersky Security Center",
                 "config": "",
                 "params": {
-                  "KLPOL_DN": "Kaspersky Endpoint Security for Windows (11.0.0)",
+                  "KLPOL_DN": "Kaspersky Endpoint Security for Windows (11.0.1)",
                   "nGroupId": "1",
                   "KLPOL_PRODUCT": "KES",
-                  "KLPOL_VERSION": "11.0.0.0",
+                  "KLPOL_VERSION": "11.0.1.0",
                   "KLPOL_GROUP_ID": 1
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "add_policy_request",
                 "operationTitle": "Add Policy",
@@ -809,7 +809,7 @@
                 "params": {
                   "host_id": "1"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_product_installed",
                 "operationTitle": "Get Products Installed",
@@ -932,7 +932,7 @@
                   "name": "demo",
                   "parent_id": "1"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "add_group",
                 "operationTitle": "Add Group",
@@ -1027,7 +1027,7 @@
                 "params": {
                   "policy_id": "1"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_policy_request",
                 "operationTitle": "Get Specific Policy",
@@ -1120,7 +1120,7 @@
                 "name": "Kaspersky Security Center",
                 "config": "",
                 "params": [],
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "kaspersky-security-center",
                 "operation": "get_hosts_group_static_info",
                 "operationTitle": "Get Host Group Static Info",
