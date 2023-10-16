@@ -1,8 +1,7 @@
 """
 Copyright start
-Copyright (C) 2008 - 2022 Fortinet Inc.
-All rights reserved.
-FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+MIT License
+Copyright (c) 2023 Fortinet Inc
 Copyright end
 """
 from connectors.core.connector import Connector, get_logger, ConnectorError
