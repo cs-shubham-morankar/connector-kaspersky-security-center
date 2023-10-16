@@ -105,7 +105,7 @@
     },
     {
       "operation": "get_software_installed",
-      "title": "Get Software Installed on Specific Host",
+      "title": "Get Software Installed on Specefic Host",
       "description": "Retrieves a list of all product details installed from the Kaspersky Security Center.",
       "category": "investigation",
       "annotation": "get_software_installed",
