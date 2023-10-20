@@ -6,13 +6,31 @@ Kaspersky Security Center makes it easy to manage and secure both physical and v
 
 Connector Version: 1.0.1
 
-
 Authored By: Fortinet
 
 Contributors: Islam Baker, Vincent
 
 Certified: No
+
+## Release Notes for version 1.1.0
+
+Following enhancements have been made to the `Kaspersky Security Center` Connector in version 1.0.1:
+<ul>
+<li>Added pagination support to the following actions:
+    <ul>
+        <li>Get Host List</li>
+    </ul>
+    <ul>
+        <li>Get All Groups Details</li>
+    </ul>
+     <ul>
+        <li>Get All Policies on Specific Group</li>
+     </ul>
+</li>
+</ul>
+
 ## Installing the connector
+
 <p>From FortiSOAR&trade; 5.0.0 onwards, use the <strong>Connector Store</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.<br>You can also use the following <code>yum</code> command as a root user to install connectors from an SSH session:</p>
 `yum install cyops-connector-kaspersky-security-center`
 
