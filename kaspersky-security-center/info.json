@@ -206,8 +206,8 @@
       },
       "parameters": [
         {
-          "title": "KLHST_WKS_HOSTNAME",
-          "description": "Specify the KLHST_WKS_HOSTNAME based on which you want to retrieves a product details from the Kaspersky Security Center.",
+          "title": "Workstation Hostname (KLHST_WKS_HOSTNAME)",
+          "description": "Specify the workstation hostname based on which you want to retrieves a product details from the Kaspersky Security Center.",
           "type": "text",
           "name": "host_id",
           "required": true,
